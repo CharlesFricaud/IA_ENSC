@@ -6,8 +6,6 @@ namespace IA_Navigation
 {
     class PositionNode : GenericNode
     {
-        public double x;
-        public double y;
         public double xf;
         public double yf;
 
@@ -61,12 +59,12 @@ namespace IA_Navigation
             lsucc.Add(s5);
             lsucc.Add(s6);
 
-            throw new NotImplementedException();
+            return lsucc;
         }
 
         public override double CalculeHCost()
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public double time_estimation(double x1, double y1, double x2, double y2)

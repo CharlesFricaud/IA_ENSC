@@ -1,0 +1,10 @@
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.MainForm.resources
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.Properties.Resources.resources
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csproj.GenerateResource.cache
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csproj.CoreCompileInputs.cache
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csprojAssemblyReference.cache
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.exe.config
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.exe
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.pdb
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.exe
+D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.pdb

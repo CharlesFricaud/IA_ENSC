@@ -14,6 +14,8 @@ namespace IA_Navigation
         protected double TotalCost;           //coût total (g+h)
         protected GenericNode ParentNode;     // noeud parent
         protected List<GenericNode> Enfants;  // noeuds enfants
+        public double x;
+        public double y;
 
         public GenericNode()
         {

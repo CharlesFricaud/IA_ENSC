@@ -65,7 +65,7 @@
             this.btnCasA.TabIndex = 2;
             this.btnCasA.Text = "Cas A";
             this.btnCasA.UseVisualStyleBackColor = true;
-            this.btnCasA.Click += new System.EventHandler(this.btn_Click);
+            this.btnCasA.Click += new System.EventHandler(this.btn_ClickA);
             // 
             // btnCasB
             // 
@@ -76,7 +76,7 @@
             this.btnCasB.TabIndex = 3;
             this.btnCasB.Text = "Cas  B";
             this.btnCasB.UseVisualStyleBackColor = true;
-            this.btnCasB.Click += new System.EventHandler(this.btn_Click);
+            this.btnCasB.Click += new System.EventHandler(this.btn_ClickA);
             // 
             // btnCasC
             // 
@@ -87,7 +87,7 @@
             this.btnCasC.TabIndex = 4;
             this.btnCasC.Text = "Cas C";
             this.btnCasC.UseVisualStyleBackColor = true;
-            this.btnCasC.Click += new System.EventHandler(this.btn_Click);
+            this.btnCasC.Click += new System.EventHandler(this.btn_ClickA);
             // 
             // picBackground
             // 
