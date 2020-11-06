@@ -38,7 +38,7 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
-            return (x == xf && y == yf);
+            return (x <= xf+5 && y <= yf+5);
         }
 
         public override List<GenericNode> GetListSucc()
