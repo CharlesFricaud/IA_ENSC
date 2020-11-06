@@ -199,6 +199,6 @@ namespace IA_Navigation
                 if (GNfils.GetEnfants().Count > 0) AjouteBranche(GNfils, TNfils); 
             }
         }
-  
+
     }
 }
