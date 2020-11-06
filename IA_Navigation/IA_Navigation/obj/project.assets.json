@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\IA_ENSC\\IA_Navigation\\IA_Navigation\\IA_Navigation.csproj",
+      "projectUniqueName": "D:\\Mes docs\\Cours\\ENSC\\IA_ENSC\\IA_Navigation\\IA_Navigation\\IA_Navigation.csproj",
       "projectName": "IA_Navigation",
-      "projectPath": "D:\\Github\\IA_ENSC\\IA_Navigation\\IA_Navigation\\IA_Navigation.csproj",
+      "projectPath": "D:\\Mes docs\\Cours\\ENSC\\IA_ENSC\\IA_Navigation\\IA_Navigation\\IA_Navigation.csproj",
       "packagesPath": "C:\\Users\\loicm\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\IA_ENSC\\IA_Navigation\\IA_Navigation\\obj\\",
+      "outputPath": "D:\\Mes docs\\Cours\\ENSC\\IA_ENSC\\IA_Navigation\\IA_Navigation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\loicm\\AppData\\Roaming\\NuGet\\NuGet.Config",
