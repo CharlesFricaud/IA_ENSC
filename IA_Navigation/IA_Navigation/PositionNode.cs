@@ -6,6 +6,69 @@ namespace IA_Navigation
 {
     class PositionNode : GenericNode
     {
+        public double x;
+        public double y;
+        public double xf;
+        public double yf;
+
+        public PositionNode(double x1, double y1)
+        {
+            x = x1;
+            y = y1;
+        }
+
+        public PositionNode(double x1, double y1, double x1f, double y1f)
+        {
+            x = x1;
+            y = y1;
+            xf = x1f;
+            yf = y1f;
+
+        }
+
+        public override bool IsEqual(GenericNode N)
+        {
+            PositionNode Node = (PositionNode)N;
+            return (x == Node.x && y == Node.y);
+        }
+
+        public override double GetArcCost(GenericNode N)
+        {
+            PositionNode Node = (PositionNode) N;
+            return time_estimation(x, y, Node.x, Node.y);
+        }
+
+        public override bool EndState()
+        {
+            return (x == xf && y == yf);
+        }
+
+        public override List<GenericNode> GetListSucc()
+        {
+            // pavage hexagonal régulier de côté 5, en partant par la gauche, sens horaire
+            List<GenericNode> lsucc = new List<GenericNode>();
+            PositionNode s1 = new PositionNode(x - (5 * Math.Sqrt(3)),y) ;
+            PositionNode s2 = new PositionNode(x - (5 * Math.Sqrt(3) / 2), 15 / 2 + y);
+            PositionNode s3 = new PositionNode(x + (5 * Math.Sqrt(3) / 2), 15 / 2 + y);
+            PositionNode s4 = new PositionNode(x + (5 * Math.Sqrt(3)), y);
+            PositionNode s5 = new PositionNode(x + (5 * Math.Sqrt(3) / 2), y - 15 / 2 );
+            PositionNode s6 = new PositionNode(x - (5 * Math.Sqrt(3) / 2), y - 15 / 2 );
+
+            lsucc.Add(s1);
+            lsucc.Add(s2);
+            lsucc.Add(s3);
+            lsucc.Add(s4);
+            lsucc.Add(s5);
+            lsucc.Add(s6);
+
+            throw new NotImplementedException();
+        }
+
+        public override double CalculeHCost()
+        {
+            throw new NotImplementedException();
+        }
+
         public double time_estimation(double x1, double y1, double x2, double y2)
         {
             double distance = Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
