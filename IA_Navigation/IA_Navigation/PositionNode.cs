@@ -8,8 +8,8 @@ namespace IA_Navigation
     {
         public double x;
         public double y;
-        public double xf;
-        public double yf;
+        static double xf;
+        static double yf;
         static int pavage;
 
         public PositionNode(double x1, double y1)
@@ -42,7 +42,7 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
-            return (x <= xf+5 && y <= yf+5);
+            return (x <= xf+pavage && y <= yf+pavage);
         }
 
         public override List<GenericNode> GetListSucc()
