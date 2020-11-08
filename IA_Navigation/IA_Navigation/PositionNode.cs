@@ -6,8 +6,6 @@ namespace IA_Navigation
 {
     class PositionNode : GenericNode
     {
-        public double x;
-        public double y;
         static double xf;
         static double yf;
         static int pavage;
@@ -71,6 +69,10 @@ namespace IA_Navigation
             return 0;
         }
 
+        public override string ToString()
+        {
+            return "x = "+x+" ; y = "+y;
+        }
         public double time_estimation(double x1, double y1, double x2, double y2)
         {
             double distance = Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));

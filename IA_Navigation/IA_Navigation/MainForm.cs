@@ -21,7 +21,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(100, 200, 200,100) ;
+            PositionNode N0 = new PositionNode(100, 200, 200,100,5) ;
             
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -31,17 +31,74 @@ namespace IA_Navigation
             }
             else
             {
-                lblSolution.Text = "Une chemin a été trouvée";
+                lblSolution.Text = "Un chemin a été trouvée";
                 //Dessin du chemin sur la carte
-                Dessin.TracePoint(N0.x, N0.y, picBackground);
+                Dessin.TracePoint(N0.x, N0.y, picBackground);                
                 for (int i = 0; i < Lres.Count; i++)
-                {
-                    
+                {                    
                     if (i != Lres.Count - 1)                        
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
                     else
                         Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
                 }                
+                g.GetSearchTree(trvBranche);
+            }
+
+        }
+
+        private void btn_ClickB(object sender, EventArgs e)
+        {
+            SearchTree g = new SearchTree();
+
+            PositionNode N0 = new PositionNode(100, 200, 200, 100, 5);
+
+
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
+            if (Lres.Count == 0)
+            {
+                lblSolution.Text = "Pas de chemin trouvé";
+            }
+            else
+            {
+                lblSolution.Text = "Un chemin a été trouvée";
+                //Dessin du chemin sur la carte
+                Dessin.TracePoint(N0.x, N0.y, picBackground);
+                for (int i = 0; i < Lres.Count; i++)
+                {
+                    if (i != Lres.Count - 1)
+                        Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
+                    else
+                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
+                }
+                g.GetSearchTree(trvBranche);
+            }
+
+        }
+
+        private void btn_ClickC(object sender, EventArgs e)
+        {
+            SearchTree g = new SearchTree();
+
+            PositionNode N0 = new PositionNode(200, 100, 100, 200, 5);
+
+
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
+            if (Lres.Count == 0)
+            {
+                lblSolution.Text = "Pas de chemin trouvé";
+            }
+            else
+            {
+                lblSolution.Text = "Un chemin a été trouvée";
+                //Dessin du chemin sur la carte
+                Dessin.TracePoint(N0.x, N0.y, picBackground);
+                for (int i = 0; i < Lres.Count; i++)
+                {
+                    if (i != Lres.Count - 1)
+                        Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
+                    else
+                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
+                }
                 g.GetSearchTree(trvBranche);
             }
 
