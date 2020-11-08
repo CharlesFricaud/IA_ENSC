@@ -6,8 +6,11 @@ namespace IA_Navigation
 {
     class PositionNode : GenericNode
     {
+        public double x;
+        public double y;
         public double xf;
         public double yf;
+        static int pavage;
 
         public PositionNode(double x1, double y1)
         {
@@ -15,12 +18,13 @@ namespace IA_Navigation
             y = y1;
         }
 
-        public PositionNode(double x1, double y1, double x1f, double y1f)
+        public PositionNode(double x1, double y1, double x1f, double y1f, int pav)
         {
             x = x1;
             y = y1;
             xf = x1f;
             yf = y1f;
+            pavage = pav;
 
         }
 
@@ -45,12 +49,12 @@ namespace IA_Navigation
         {
             // pavage hexagonal régulier de côté 5, en partant par la gauche, sens horaire
             List<GenericNode> lsucc = new List<GenericNode>();
-            PositionNode s1 = new PositionNode(x - (5 * Math.Sqrt(3)),y) ;
-            PositionNode s2 = new PositionNode(x - (5 * Math.Sqrt(3) / 2), 15 / 2 + y);
-            PositionNode s3 = new PositionNode(x + (5 * Math.Sqrt(3) / 2), 15 / 2 + y);
-            PositionNode s4 = new PositionNode(x + (5 * Math.Sqrt(3)), y);
-            PositionNode s5 = new PositionNode(x + (5 * Math.Sqrt(3) / 2), y - 15 / 2 );
-            PositionNode s6 = new PositionNode(x - (5 * Math.Sqrt(3) / 2), y - 15 / 2 );
+            PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3)), y) ;
+            PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+            PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+            PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3)), y);
+            PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage );
+            PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage );
 
             lsucc.Add(s1);
             lsucc.Add(s2);
