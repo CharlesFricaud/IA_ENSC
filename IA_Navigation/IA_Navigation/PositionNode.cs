@@ -66,7 +66,7 @@ namespace IA_Navigation
 
         public override double CalculeHCost()
         {
-            return 0;
+            return Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf));
         }
 
         public override string ToString()
