@@ -21,7 +21,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(100, 200, 200,100,5) ;
+            PositionNode N0 = new PositionNode(100, 200, 200,100,1) ;
             PositionNode.Cas = 'a';
             
 
@@ -51,7 +51,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(100, 200, 200, 100, 5);
+            PositionNode N0 = new PositionNode(100, 200, 200, 100, 1);
             PositionNode.Cas = 'b';
 
 
@@ -81,7 +81,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(200, 100, 100, 200, 5);
+            PositionNode N0 = new PositionNode(200, 100, 100, 200, 1);
             PositionNode.Cas = 'c';
 
 
