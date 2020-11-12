@@ -56,14 +56,24 @@ namespace IA_Navigation
             // PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
             // PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
 
-            PositionNode s1 = new PositionNode(x - pavage, y);
-            PositionNode s2 = new PositionNode(x - pavage, y + pavage);
-            PositionNode s3 = new PositionNode(x, y + pavage);
-            PositionNode s4 = new PositionNode(x + pavage, y + pavage);
-            PositionNode s5 = new PositionNode(x + pavage, y);
-            PositionNode s6 = new PositionNode(x + pavage, y - pavage);
-            PositionNode s7 = new PositionNode(x, y - pavage);
-            PositionNode s8 = new PositionNode(x - pavage, y - pavage);
+
+            // autre pavage hexagonal régulier de côté pavage, en partant par le bas, sens horaire, fonctionne
+            PositionNode s1 = new PositionNode(x , y - (pavage * Math.Sqrt(3)));
+            PositionNode s2 = new PositionNode(x - (1.5 * pavage), y - (pavage * Math.Sqrt(3) / 2));
+            PositionNode s3 = new PositionNode(x - (1.5 * pavage), y + (pavage * Math.Sqrt(3) / 2));
+            PositionNode s4 = new PositionNode(x , y + (pavage * Math.Sqrt(3)));
+            PositionNode s5 = new PositionNode(x + (1.5 * pavage), y + (pavage * Math.Sqrt(3) / 2));
+            PositionNode s6 = new PositionNode(x + (1.5 * pavage), y - (pavage * Math.Sqrt(3) / 2));
+
+            //pavage carré
+            //PositionNode s1 = new PositionNode(x - pavage, y);
+            //PositionNode s2 = new PositionNode(x - pavage, y + pavage);
+            //PositionNode s3 = new PositionNode(x, y + pavage);
+            //PositionNode s4 = new PositionNode(x + pavage, y + pavage);
+            //PositionNode s5 = new PositionNode(x + pavage, y);
+            //PositionNode s6 = new PositionNode(x + pavage, y - pavage);
+            //PositionNode s7 = new PositionNode(x, y - pavage);
+            //PositionNode s8 = new PositionNode(x - pavage, y - pavage);
 
 
             lsucc.Add(s1);
@@ -72,15 +82,16 @@ namespace IA_Navigation
             lsucc.Add(s4);
             lsucc.Add(s5);
             lsucc.Add(s6);
-            lsucc.Add(s7);
-            lsucc.Add(s8);
+            //lsucc.Add(s7);
+            //lsucc.Add(s8);
 
             return lsucc;
         }
 
         public override double CalculeHCost()
         {
-            return Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf));
+            return 0;
+            //return Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf));
         }
 
         public override string ToString()
