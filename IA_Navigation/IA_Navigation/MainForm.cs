@@ -22,6 +22,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
 
             PositionNode N0 = new PositionNode(100, 200, 200,100,5) ;
+            PositionNode.Cas = 'a';
             
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -51,6 +52,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
 
             PositionNode N0 = new PositionNode(100, 200, 200, 100, 5);
+            PositionNode.Cas = 'b';
 
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -80,6 +82,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
 
             PositionNode N0 = new PositionNode(200, 100, 100, 200, 5);
+            PositionNode.Cas = 'c';
 
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
