@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\IA_Navigation",
+    "\\IA_Navigation\\IA_Navigation"
   ],
+  "SelectedNode": "\\IA_Navigation\\IA_Navigation\\PositionNode.cs",
   "PreviewInSolutionExplorer": false
 }

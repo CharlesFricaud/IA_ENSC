@@ -40,7 +40,7 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
-            return (x <= xf + pavage && y <= yf + pavage);
+            return ((x >= xf - pavage && x <= xf + pavage) && (y > yf - pavage && y <= yf + pavage));
         }
 
         public override List<GenericNode> GetListSucc()
@@ -66,7 +66,7 @@ namespace IA_Navigation
 
         public override double CalculeHCost()
         {
-            return 0;
+            return Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf));
         }
 
         public override string ToString()
