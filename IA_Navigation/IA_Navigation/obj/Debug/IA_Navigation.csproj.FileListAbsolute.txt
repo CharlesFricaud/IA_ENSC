@@ -8,3 +8,13 @@ D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.exe
 D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.pdb
 D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.exe
 D:\Github\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.pdb
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.exe.config
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.exe
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\bin\Debug\IA_Navigation.pdb
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csprojAssemblyReference.cache
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.MainForm.resources
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.Properties.Resources.resources
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csproj.GenerateResource.cache
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.csproj.CoreCompileInputs.cache
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.exe
+C:\Users\Jean Luc\source\repos\IA_ENSC\IA_Navigation\IA_Navigation\obj\Debug\IA_Navigation.pdb
