@@ -21,7 +21,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(100, 200, 200,100,5) ;
+            PositionNode N0 = new PositionNode(100, 200, 200,100, (int)numPavage.Value) ;
             PositionNode.Cas = 'a';
             double tempsTotal = 0;
             
@@ -57,7 +57,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(100, 200, 200, 100, 5);
+            PositionNode N0 = new PositionNode(100, 200, 200, 100, (int)numPavage.Value);
             PositionNode.Cas = 'b';
             double tempsTotal = 0;
 
@@ -93,7 +93,7 @@ namespace IA_Navigation
         {
             SearchTree g = new SearchTree();
 
-            PositionNode N0 = new PositionNode(200, 100, 100, 200, 5);
+            PositionNode N0 = new PositionNode(200, 100, 100, 200, (int)numPavage.Value);
             PositionNode.Cas = 'c';
             double tempsTotal = 0;
 
@@ -122,6 +122,11 @@ namespace IA_Navigation
             }
 
             txtTemps.Text += " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

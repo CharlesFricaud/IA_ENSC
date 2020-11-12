@@ -37,7 +37,10 @@
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.lblSolution = new System.Windows.Forms.Label();
             this.txtTemps = new System.Windows.Forms.TextBox();
+            this.numPavage = new System.Windows.Forms.NumericUpDown();
+            this.lblPavage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPavage)).BeginInit();
             this.SuspendLayout();
             // 
             // trvBranche
@@ -117,11 +120,45 @@
             this.txtTemps.TabIndex = 7;
             this.txtTemps.Text = "Temps total :";
             // 
+            // numPavage
+            // 
+            this.numPavage.Location = new System.Drawing.Point(130, 12);
+            this.numPavage.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numPavage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPavage.Name = "numPavage";
+            this.numPavage.Size = new System.Drawing.Size(36, 20);
+            this.numPavage.TabIndex = 8;
+            this.numPavage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblPavage
+            // 
+            this.lblPavage.AutoSize = true;
+            this.lblPavage.Font = new System.Drawing.Font("Nobile", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPavage.Location = new System.Drawing.Point(57, 9);
+            this.lblPavage.Name = "lblPavage";
+            this.lblPavage.Size = new System.Drawing.Size(67, 21);
+            this.lblPavage.TabIndex = 9;
+            this.lblPavage.Text = "Pavage :";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPavage);
+            this.Controls.Add(this.numPavage);
             this.Controls.Add(this.txtTemps);
             this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.picBackground);
@@ -133,6 +170,7 @@
             this.Name = "MainForm";
             this.Text = "Navigation";
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPavage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +186,8 @@
         public System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.Label lblSolution;
         private System.Windows.Forms.TextBox txtTemps;
+        private System.Windows.Forms.NumericUpDown numPavage;
+        private System.Windows.Forms.Label lblPavage;
     }
 }
 
