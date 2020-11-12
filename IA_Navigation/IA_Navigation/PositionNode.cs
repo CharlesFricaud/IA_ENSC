@@ -73,7 +73,7 @@ namespace IA_Navigation
         {
             return "x = " + x + " ; y = " + y;
         }
-        public double time_estimation(double x1, double y1, double x2, double y2)
+        public static double time_estimation(double x1, double y1, double x2, double y2)
         {
             double distance = Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
             if (distance > 10)
@@ -113,7 +113,7 @@ namespace IA_Navigation
 
         public static char Cas { get; set; } 
         // à modifier en ‘b’ ou ‘c’ selon le choix de l’utilisateur
-        public double get_wind_speed ( double x, double y)
+        public static double get_wind_speed ( double x, double y)
         {
             if (Cas == 'a')
                 return 50;
@@ -127,7 +127,7 @@ namespace IA_Navigation
             else 
                 return 20;
         }
-        public double get_wind_direction(double x, double y) 
+        public static double get_wind_direction(double x, double y) 
         { 
             if (Cas == 'a')
                 return 30;

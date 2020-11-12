@@ -23,6 +23,7 @@ namespace IA_Navigation
 
             PositionNode N0 = new PositionNode(100, 200, 200,100,1) ;
             PositionNode.Cas = 'a';
+            double tempsTotal = 0;
             
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -36,14 +37,19 @@ namespace IA_Navigation
                 //Dessin du chemin sur la carte
                 Dessin.TracePoint(N0.x, N0.y, picBackground);                
                 for (int i = 0; i < Lres.Count; i++)
-                {                    
-                    if (i != Lres.Count - 1)                        
+                {
+                    if (i != Lres.Count - 1)
+                    {
+                        tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
+                    }
                     else
                         Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
                 }                
                 g.GetSearchTree(trvBranche);
             }
+
+            txtTemps.Text += " "  + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal))*60) + "min";
 
         }
 
@@ -53,6 +59,7 @@ namespace IA_Navigation
 
             PositionNode N0 = new PositionNode(100, 200, 200, 100, 1);
             PositionNode.Cas = 'b';
+            double tempsTotal = 0;
 
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -68,12 +75,17 @@ namespace IA_Navigation
                 for (int i = 0; i < Lres.Count; i++)
                 {
                     if (i != Lres.Count - 1)
+                    {
+                        tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
+                    }
                     else
                         Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
                 }
                 g.GetSearchTree(trvBranche);
             }
+
+            txtTemps.Text += " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
 
@@ -83,6 +95,7 @@ namespace IA_Navigation
 
             PositionNode N0 = new PositionNode(200, 100, 100, 200, 1);
             PositionNode.Cas = 'c';
+            double tempsTotal = 0;
 
 
             List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
@@ -98,12 +111,17 @@ namespace IA_Navigation
                 for (int i = 0; i < Lres.Count; i++)
                 {
                     if (i != Lres.Count - 1)
+                    {
+                        tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
+                    }
                     else
                         Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
                 }
                 g.GetSearchTree(trvBranche);
             }
+
+            txtTemps.Text += " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
     }

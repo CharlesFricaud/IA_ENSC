@@ -36,6 +36,7 @@
             this.btnCasC = new System.Windows.Forms.Button();
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.lblSolution = new System.Windows.Forms.Label();
+            this.txtTemps = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,21 @@
             this.lblSolution.Size = new System.Drawing.Size(0, 17);
             this.lblSolution.TabIndex = 6;
             // 
+            // txtTemps
+            // 
+            this.txtTemps.Font = new System.Drawing.Font("Nobile", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTemps.Location = new System.Drawing.Point(62, 403);
+            this.txtTemps.Name = "txtTemps";
+            this.txtTemps.Size = new System.Drawing.Size(298, 27);
+            this.txtTemps.TabIndex = 7;
+            this.txtTemps.Text = "Temps total :";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTemps);
             this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.picBackground);
             this.Controls.Add(this.btnCasC);
@@ -136,6 +147,7 @@
         private System.Windows.Forms.Button btnCasC;
         public System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.Label lblSolution;
+        private System.Windows.Forms.TextBox txtTemps;
     }
 }
 
