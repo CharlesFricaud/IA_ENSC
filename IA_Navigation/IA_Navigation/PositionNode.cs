@@ -29,7 +29,7 @@ namespace IA_Navigation
         public override bool IsEqual(GenericNode N)
         {
             PositionNode Node = (PositionNode)N;
-            return ((x >= Node.x - pavage && x <= Node.x + pavage) && (y > Node.y - pavage && y <= Node.y + pavage));
+            return (Math.Round(x) == Math.Round(Node.x) && Math.Round(y) == Math.Round(Node.y));
 
         }
 
@@ -41,57 +41,73 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
-            return ((x >= xf - pavage && x <= xf + pavage) && (y > yf - pavage && y <= yf + pavage));
+            return ((x >= xf - pavage / 2 && x <= xf + pavage / 2) && (y > yf - pavage / 2 && y <= yf + pavage / 2));
         }
 
         public override List<GenericNode> GetListSucc()
         {
             List<GenericNode> lsucc = new List<GenericNode>();
 
-            // pavage hexagonal régulier de côté pavage, en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
-            // PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3)), y);
-            // PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
-            // PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
-            // PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3)), y);
-            // PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
-            // PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
+            /*
+            //Pavage hexagonal régulier de côté pavage, en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
+            PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3) * 2), y);
+            PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+            PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+            PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3) * 2), y);
+            PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
+            PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
+            */
 
+            /*
+            //pavage triangulaire
+            PositionNode s1 = new PositionNode(x - pavage, y);
+            PositionNode s2 = new PositionNode(x + pavage, y);
+            PositionNode s3 = new PositionNode(x + pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
+            PositionNode s4 = new PositionNode(x - pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
+            PositionNode s5 = new PositionNode(x + pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
+            PositionNode s6 = new PositionNode(x - pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
+            */
 
-            // autre pavage hexagonal régulier de côté pavage, en partant par le bas, sens horaire, fonctionne
-            PositionNode s1 = new PositionNode(x , y - (pavage * Math.Sqrt(3)));
-            PositionNode s2 = new PositionNode(x - (1.5 * pavage), y - (pavage * Math.Sqrt(3) / 2));
-            PositionNode s3 = new PositionNode(x - (1.5 * pavage), y + (pavage * Math.Sqrt(3) / 2));
-            PositionNode s4 = new PositionNode(x , y + (pavage * Math.Sqrt(3)));
-            PositionNode s5 = new PositionNode(x + (1.5 * pavage), y + (pavage * Math.Sqrt(3) / 2));
-            PositionNode s6 = new PositionNode(x + (1.5 * pavage), y - (pavage * Math.Sqrt(3) / 2));
+            
+            //Pavage carré
+            PositionNode s1 = new PositionNode(x - pavage, y);
+            PositionNode s2 = new PositionNode(x + pavage, y);
+            PositionNode s3 = new PositionNode(x + pavage, y + pavage);
+            PositionNode s4 = new PositionNode(x - pavage, y + pavage);
+            PositionNode s5 = new PositionNode(x + pavage, y - pavage);
+            PositionNode s6 = new PositionNode(x - pavage, y - pavage);
+            PositionNode s7 = new PositionNode(x, y + pavage);
+            PositionNode s8 = new PositionNode(x, y - pavage);
+            
+            if(s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+                lsucc.Add(s1);
+            if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
+                lsucc.Add(s2);
+            if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
+                lsucc.Add(s3);
+            if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
+                lsucc.Add(s4);
+            if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
+                lsucc.Add(s5);
+            if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
+                lsucc.Add(s6);
+            if (s7.x >= 0 && s7.y >= 0 && s7.x <= 300 && s7.y <= 300)
+                lsucc.Add(s7);
+            if (s8.x >= 0 && s8.y >= 0 && s8.x <= 300 && s8.y <= 300)
+                lsucc.Add(s8);
 
-            //pavage carré
-            //PositionNode s1 = new PositionNode(x - pavage, y);
-            //PositionNode s2 = new PositionNode(x - pavage, y + pavage);
-            //PositionNode s3 = new PositionNode(x, y + pavage);
-            //PositionNode s4 = new PositionNode(x + pavage, y + pavage);
-            //PositionNode s5 = new PositionNode(x + pavage, y);
-            //PositionNode s6 = new PositionNode(x + pavage, y - pavage);
-            //PositionNode s7 = new PositionNode(x, y - pavage);
-            //PositionNode s8 = new PositionNode(x - pavage, y - pavage);
-
-
-            lsucc.Add(s1);
-            lsucc.Add(s2);
-            lsucc.Add(s3);
-            lsucc.Add(s4);
-            lsucc.Add(s5);
-            lsucc.Add(s6);
-            //lsucc.Add(s7);
-            //lsucc.Add(s8);
 
             return lsucc;
         }
 
         public override double CalculeHCost()
         {
-            return 0;
-            //return Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf));
+
+
+            //Vitesse maximale atteinte pour 45° et vaut 0.9*Vvent
+            return (Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
+            //return 0;
+
         }
 
         public override string ToString()
@@ -106,7 +122,8 @@ namespace IA_Navigation
 
             double windspeed = get_wind_speed((x1 + x2) / 2.0, (y1 + y2) / 2.0);
             double winddirection = get_wind_direction((x1 + x2) / 2.0, (y1 + y2) / 2.0);
-            double boatspeed; double boatdirection = Math.Atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+            double boatspeed; 
+            double boatdirection = Math.Atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
             // On ramène entre 0 et 360
             if (boatdirection < 0)
                 boatdirection = boatdirection + 360;
