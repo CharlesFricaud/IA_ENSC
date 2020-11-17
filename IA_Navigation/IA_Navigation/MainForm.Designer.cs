@@ -113,6 +113,7 @@
             // 
             // txtTemps
             // 
+            this.txtTemps.Enabled = false;
             this.txtTemps.Font = new System.Drawing.Font("Nobile", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTemps.Location = new System.Drawing.Point(62, 403);
             this.txtTemps.Name = "txtTemps";

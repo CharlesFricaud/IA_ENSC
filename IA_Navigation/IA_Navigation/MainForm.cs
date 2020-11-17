@@ -49,7 +49,7 @@ namespace IA_Navigation
                 g.GetSearchTree(trvBranche);
             }
 
-            txtTemps.Text += " "  + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal))*60) + "min";
+            txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal))*60) + "min";
 
         }
 
@@ -85,7 +85,7 @@ namespace IA_Navigation
                 g.GetSearchTree(trvBranche);
             }
 
-            txtTemps.Text += " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
+            txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
 
@@ -121,7 +121,7 @@ namespace IA_Navigation
                 g.GetSearchTree(trvBranche);
             }
 
-            txtTemps.Text += " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
+            txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
 
