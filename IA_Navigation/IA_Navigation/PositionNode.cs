@@ -49,13 +49,23 @@ namespace IA_Navigation
             List<GenericNode> lsucc = new List<GenericNode>();
 
             /*
-            //Pavage hexagonal régulier de côté pavage, en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
-            PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3) * 2), y);
+            //Pavage hexagonal régulier de côté "pavage", en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
+            PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3)), y);
             PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
             PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
-            PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3) * 2), y);
+            PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3)), y);
             PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
             PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
+            */
+
+            /*
+            //Autre pavage hexagonal régulier de côté "pavage", renversement de l'hexagone, départ du bas, sens horaire
+            PositionNode s1 = new PositionNode(x , y - (pavage * Math.Sqrt(3)));
+            PositionNode s2 = new PositionNode(x - (pavage * 1.5) , y - (pavage * Math.Sqrt(3) / 2));
+            PositionNode s3 = new PositionNode(x - (pavage * 1.5) , y + (pavage * Math.Sqrt(3) / 2));
+            PositionNode s4 = new PositionNode(x ,  y + (pavage * Math.Sqrt(3)));
+            PositionNode s5 = new PositionNode(x + (pavage * 1.5) ,  y - (pavage * Math.Sqrt(3) / 2));
+            PositionNode s6 = new PositionNode(x + (pavage * 1.5) ,  y + (pavage * Math.Sqrt(3) / 2));
             */
 
             /*
@@ -79,7 +89,8 @@ namespace IA_Navigation
             PositionNode s7 = new PositionNode(x, y + pavage);
             PositionNode s8 = new PositionNode(x, y - pavage);
             
-            if(s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+
+            if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
                 lsucc.Add(s1);
             if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
                 lsucc.Add(s2);
@@ -103,9 +114,9 @@ namespace IA_Navigation
         public override double CalculeHCost()
         {
 
-
+            //Weighed A* = H*poids --> plus rapide mais solution peut être sous-optimale
             //Vitesse maximale atteinte pour 45° et vaut 0.9*Vvent
-            return (Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
+            return 5*(Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
             //return 0;
 
         }
