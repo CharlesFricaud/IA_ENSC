@@ -41,7 +41,7 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
-            return ((x >= xf - pavage / 2 && x <= xf + pavage / 2) && (y > yf - pavage / 2 && y <= yf + pavage / 2));
+            return ((x >= xf - pavage / 2.0 && x <= xf + pavage / 2.0) && (y > yf - pavage / 2.0 && y <= yf + pavage / 2.0));
         }
 
         public override List<GenericNode> GetListSucc()
@@ -106,17 +106,15 @@ namespace IA_Navigation
                 lsucc.Add(s7);
             if (s8.x >= 0 && s8.y >= 0 && s8.x <= 300 && s8.y <= 300)
                 lsucc.Add(s8);
-
+            
 
             return lsucc;
         }
 
         public override double CalculeHCost()
         {
-
-            //Weighed A* = H*poids --> plus rapide mais solution peut être sous-optimale
             //Vitesse maximale atteinte pour 45° et vaut 0.9*Vvent
-            return 5*(Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
+            return (Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
             //return 0;
 
         }

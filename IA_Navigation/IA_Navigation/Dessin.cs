@@ -16,7 +16,6 @@ namespace IA_Navigation
             Pen penred = new Pen(Color.Red);
             Graphics g = Pic.CreateGraphics();
             g.DrawLine(penred, new Point((int)x1, Pic.Height - (int)y1), new Point((int)x2, Pic.Height - (int)y2));
-
         }
 
         public static void TracePoint(double x1, double y1, PictureBox Pic)
