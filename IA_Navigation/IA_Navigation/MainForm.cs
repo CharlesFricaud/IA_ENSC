@@ -15,13 +15,26 @@ namespace IA_Navigation
         public MainForm()
         {
             InitializeComponent();
+            radHexa.Checked = true;
         }
 
         private void btn_ClickA(object sender, EventArgs e)
         {
-            SearchTree g = new SearchTree();
+            picBackground.Refresh(); //Permet d'effacer les trajets précedemments dessinés
 
-            PositionNode N0 = new PositionNode(100, 200, 200,100, (int)numPavage.Value) ;
+            SearchTree g = new SearchTree();
+            string type = "";
+
+            if (radCarre.Checked)
+                type = "carre";
+            else if (radHexa.Checked)
+                type = "hexa";
+            else if (radHexaInverse.Checked)
+                type = "hexaInverse";
+            else
+                type = "triangle";
+
+            PositionNode N0 = new PositionNode(100, 200, 200,100, (int)numPavage.Value, type) ;
             PositionNode.Cas = 'a';
             double tempsTotal = 0;
             
@@ -55,9 +68,21 @@ namespace IA_Navigation
 
         private void btn_ClickB(object sender, EventArgs e)
         {
-            SearchTree g = new SearchTree();
+            picBackground.Refresh(); //Permet d'effacer les trajets précedemments dessinés
 
-            PositionNode N0 = new PositionNode(100, 200, 200, 100, (int)numPavage.Value);
+            SearchTree g = new SearchTree();
+            string type = "";
+
+            if (radCarre.Checked)
+                type = "carre";
+            else if (radHexa.Checked)
+                type = "hexa";
+            else if (radHexaInverse.Checked)
+                type = "hexaInverse";
+            else
+                type = "triangle";
+
+            PositionNode N0 = new PositionNode(100, 200, 200, 100, (int)numPavage.Value, type);
             PositionNode.Cas = 'b';
             double tempsTotal = 0;
 
@@ -91,9 +116,21 @@ namespace IA_Navigation
 
         private void btn_ClickC(object sender, EventArgs e)
         {
-            SearchTree g = new SearchTree();
+            picBackground.Refresh(); //Permet d'effacer les trajets précedemments dessinés
 
-            PositionNode N0 = new PositionNode(200, 100, 100, 200, (int)numPavage.Value);
+            SearchTree g = new SearchTree();
+            string type = "";
+
+            if (radCarre.Checked)
+                type = "carre";
+            else if (radHexa.Checked)
+                type = "hexa";
+            else if (radHexaInverse.Checked)
+                type = "hexaInverse";
+            else
+                type = "triangle";
+
+            PositionNode N0 = new PositionNode(200, 100, 100, 200, (int)numPavage.Value, type);
             PositionNode.Cas = 'c';
             double tempsTotal = 0;
 

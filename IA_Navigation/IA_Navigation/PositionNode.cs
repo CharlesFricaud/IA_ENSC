@@ -9,6 +9,7 @@ namespace IA_Navigation
         static double xf;
         static double yf;
         static int pavage;
+        static string typePavage;
 
         public PositionNode(double x1, double y1)
         {
@@ -16,13 +17,14 @@ namespace IA_Navigation
             y = y1;
         }
 
-        public PositionNode(double x1, double y1, double x1f, double y1f, int pav)
+        public PositionNode(double x1, double y1, double x1f, double y1f, int pav, string type)
         {
             x = x1;
             y = y1;
             xf = x1f;
             yf = y1f;
             pavage = pav;
+            typePavage = type;
 
         }
 
@@ -48,66 +50,109 @@ namespace IA_Navigation
         {
             List<GenericNode> lsucc = new List<GenericNode>();
 
-            /*
-            //Pavage hexagonal régulier de côté "pavage", en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
-            PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3)), y);
-            PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
-            PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
-            PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3)), y);
-            PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
-            PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
-            */
+            if (typePavage == "hexa")
+            {
+                //Pavage hexagonal régulier de côté "pavage", en partant par la gauche, sens horaire, fonctionne pour cas A et C mais pas B
+                PositionNode s1 = new PositionNode(x - (pavage * Math.Sqrt(3)), y);
+                PositionNode s2 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+                PositionNode s3 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), 1.5 * pavage + y);
+                PositionNode s4 = new PositionNode(x + (pavage * Math.Sqrt(3)), y);
+                PositionNode s5 = new PositionNode(x + (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
+                PositionNode s6 = new PositionNode(x - (pavage * Math.Sqrt(3) / 2), y - 1.5 * pavage);
 
-            /*
-            //Autre pavage hexagonal régulier de côté "pavage", renversement de l'hexagone, départ du bas, sens horaire
-            PositionNode s1 = new PositionNode(x , y - (pavage * Math.Sqrt(3)));
-            PositionNode s2 = new PositionNode(x - (pavage * 1.5) , y - (pavage * Math.Sqrt(3) / 2));
-            PositionNode s3 = new PositionNode(x - (pavage * 1.5) , y + (pavage * Math.Sqrt(3) / 2));
-            PositionNode s4 = new PositionNode(x ,  y + (pavage * Math.Sqrt(3)));
-            PositionNode s5 = new PositionNode(x + (pavage * 1.5) ,  y - (pavage * Math.Sqrt(3) / 2));
-            PositionNode s6 = new PositionNode(x + (pavage * 1.5) ,  y + (pavage * Math.Sqrt(3) / 2));
-            */
+                if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+                    lsucc.Add(s1);
+                if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
+                    lsucc.Add(s2);
+                if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
+                    lsucc.Add(s3);
+                if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
+                    lsucc.Add(s4);
+                if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
+                    lsucc.Add(s5);
+                if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
+                    lsucc.Add(s6);
+            }
 
-            /*
-            //pavage triangulaire
-            PositionNode s1 = new PositionNode(x - pavage, y);
-            PositionNode s2 = new PositionNode(x + pavage, y);
-            PositionNode s3 = new PositionNode(x + pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
-            PositionNode s4 = new PositionNode(x - pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
-            PositionNode s5 = new PositionNode(x + pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
-            PositionNode s6 = new PositionNode(x - pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
-            */
+            if (typePavage == "hexaInverse")
+            {
+                //Autre pavage hexagonal régulier de côté "pavage", renversement de l'hexagone, départ du bas, sens horaire
+                PositionNode s1 = new PositionNode(x, y - (pavage * Math.Sqrt(3)));
+                PositionNode s2 = new PositionNode(x - (pavage * 1.5), y - (pavage * Math.Sqrt(3) / 2));
+                PositionNode s3 = new PositionNode(x - (pavage * 1.5), y + (pavage * Math.Sqrt(3) / 2));
+                PositionNode s4 = new PositionNode(x, y + (pavage * Math.Sqrt(3)));
+                PositionNode s5 = new PositionNode(x + (pavage * 1.5), y - (pavage * Math.Sqrt(3) / 2));
+                PositionNode s6 = new PositionNode(x + (pavage * 1.5), y + (pavage * Math.Sqrt(3) / 2));
 
+                if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+                    lsucc.Add(s1);
+                if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
+                    lsucc.Add(s2);
+                if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
+                    lsucc.Add(s3);
+                if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
+                    lsucc.Add(s4);
+                if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
+                    lsucc.Add(s5);
+                if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
+                    lsucc.Add(s6);
+            }
+
+            if (typePavage == "triangle")
+            {
+                //pavage triangulaire
+                PositionNode s1 = new PositionNode(x - pavage, y);
+                PositionNode s2 = new PositionNode(x + pavage, y);
+                PositionNode s3 = new PositionNode(x + pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
+                PositionNode s4 = new PositionNode(x - pavage / 2, y + Math.Sqrt(3) / 2 * pavage);
+                PositionNode s5 = new PositionNode(x + pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
+                PositionNode s6 = new PositionNode(x - pavage / 2, y - Math.Sqrt(3) / 2 * pavage);
+
+                if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+                    lsucc.Add(s1);
+                if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
+                    lsucc.Add(s2);
+                if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
+                    lsucc.Add(s3);
+                if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
+                    lsucc.Add(s4);
+                if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
+                    lsucc.Add(s5);
+                if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
+                    lsucc.Add(s6);
+            }
+
+
+            if (typePavage == "carre")
+            {
+                //Pavage carré
+                PositionNode s1 = new PositionNode(x - pavage, y);
+                PositionNode s2 = new PositionNode(x + pavage, y);
+                PositionNode s3 = new PositionNode(x + pavage, y + pavage);
+                PositionNode s4 = new PositionNode(x - pavage, y + pavage);
+                PositionNode s5 = new PositionNode(x + pavage, y - pavage);
+                PositionNode s6 = new PositionNode(x - pavage, y - pavage);
+                PositionNode s7 = new PositionNode(x, y + pavage);
+                PositionNode s8 = new PositionNode(x, y - pavage);
+
+                if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
+                    lsucc.Add(s1);
+                if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
+                    lsucc.Add(s2);
+                if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
+                    lsucc.Add(s3);
+                if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
+                    lsucc.Add(s4);
+                if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
+                    lsucc.Add(s5);
+                if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
+                    lsucc.Add(s6);
+                if (s7.x >= 0 && s7.y >= 0 && s7.x <= 300 && s7.y <= 300)
+                    lsucc.Add(s7);
+                if (s8.x >= 0 && s8.y >= 0 && s8.x <= 300 && s8.y <= 300)
+                    lsucc.Add(s8);
+            }                                 
             
-            //Pavage carré
-            PositionNode s1 = new PositionNode(x - pavage, y);
-            PositionNode s2 = new PositionNode(x + pavage, y);
-            PositionNode s3 = new PositionNode(x + pavage, y + pavage);
-            PositionNode s4 = new PositionNode(x - pavage, y + pavage);
-            PositionNode s5 = new PositionNode(x + pavage, y - pavage);
-            PositionNode s6 = new PositionNode(x - pavage, y - pavage);
-            PositionNode s7 = new PositionNode(x, y + pavage);
-            PositionNode s8 = new PositionNode(x, y - pavage);
-            
-
-            if (s1.x >= 0 && s1.y >= 0 && s1.x <= 300 && s1.y <= 300)
-                lsucc.Add(s1);
-            if (s2.x >= 0 && s2.y >= 0 && s2.x <= 300 && s2.y <= 300)
-                lsucc.Add(s2);
-            if (s3.x >= 0 && s3.y >= 0 && s3.x <= 300 && s3.y <= 300)
-                lsucc.Add(s3);
-            if (s4.x >= 0 && s4.y >= 0 && s4.x <= 300 && s4.y <= 300)
-                lsucc.Add(s4);
-            if (s5.x >= 0 && s5.y >= 0 && s5.x <= 300 && s5.y <= 300)
-                lsucc.Add(s5);
-            if (s6.x >= 0 && s6.y >= 0 && s6.x <= 300 && s6.y <= 300)
-                lsucc.Add(s6);
-            if (s7.x >= 0 && s7.y >= 0 && s7.x <= 300 && s7.y <= 300)
-                lsucc.Add(s7);
-            if (s8.x >= 0 && s8.y >= 0 && s8.x <= 300 && s8.y <= 300)
-                lsucc.Add(s8);
-            
-
             return lsucc;
         }
 
