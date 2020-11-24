@@ -40,10 +40,16 @@
             this.numPavage = new System.Windows.Forms.NumericUpDown();
             this.lblPavage = new System.Windows.Forms.Label();
             this.grbTypePavage = new System.Windows.Forms.GroupBox();
-            this.radHexa = new System.Windows.Forms.RadioButton();
-            this.radHexaInverse = new System.Windows.Forms.RadioButton();
-            this.radTriangle = new System.Windows.Forms.RadioButton();
             this.radCarre = new System.Windows.Forms.RadioButton();
+            this.radTriangle = new System.Windows.Forms.RadioButton();
+            this.radHexaInverse = new System.Windows.Forms.RadioButton();
+            this.radHexa = new System.Windows.Forms.RadioButton();
+            this.txtSommeOuverts = new System.Windows.Forms.TextBox();
+            this.lblSommeOuverts = new System.Windows.Forms.Label();
+            this.lblSommeFermes = new System.Windows.Forms.Label();
+            this.txtSommeFermes = new System.Windows.Forms.TextBox();
+            this.lblNbNoeuds = new System.Windows.Forms.Label();
+            this.txtNbNoeuds = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPavage)).BeginInit();
             this.grbTypePavage.SuspendLayout();
@@ -53,7 +59,7 @@
             // 
             this.trvBranche.Location = new System.Drawing.Point(545, 93);
             this.trvBranche.Name = "trvBranche";
-            this.trvBranche.Size = new System.Drawing.Size(243, 300);
+            this.trvBranche.Size = new System.Drawing.Size(243, 189);
             this.trvBranche.TabIndex = 0;
             // 
             // lblBranche
@@ -173,27 +179,16 @@
             this.grbTypePavage.TabStop = false;
             this.grbTypePavage.Text = "Forme du pavage";
             // 
-            // radHexa
+            // radCarre
             // 
-            this.radHexa.AutoSize = true;
-            this.radHexa.Location = new System.Drawing.Point(7, 24);
-            this.radHexa.Name = "radHexa";
-            this.radHexa.Size = new System.Drawing.Size(87, 21);
-            this.radHexa.TabIndex = 0;
-            this.radHexa.TabStop = true;
-            this.radHexa.Text = "Hexagonal";
-            this.radHexa.UseVisualStyleBackColor = true;
-            // 
-            // radHexaInverse
-            // 
-            this.radHexaInverse.AutoSize = true;
-            this.radHexaInverse.Location = new System.Drawing.Point(7, 52);
-            this.radHexaInverse.Name = "radHexaInverse";
-            this.radHexaInverse.Size = new System.Drawing.Size(133, 21);
-            this.radHexaInverse.TabIndex = 1;
-            this.radHexaInverse.TabStop = true;
-            this.radHexaInverse.Text = "Hexagonal inversé";
-            this.radHexaInverse.UseVisualStyleBackColor = true;
+            this.radCarre.AutoSize = true;
+            this.radCarre.Location = new System.Drawing.Point(7, 108);
+            this.radCarre.Name = "radCarre";
+            this.radCarre.Size = new System.Drawing.Size(57, 21);
+            this.radCarre.TabIndex = 3;
+            this.radCarre.TabStop = true;
+            this.radCarre.Text = "Carré";
+            this.radCarre.UseVisualStyleBackColor = true;
             // 
             // radTriangle
             // 
@@ -206,22 +201,94 @@
             this.radTriangle.Text = "Triangulaire";
             this.radTriangle.UseVisualStyleBackColor = true;
             // 
-            // radCarre
+            // radHexaInverse
             // 
-            this.radCarre.AutoSize = true;
-            this.radCarre.Location = new System.Drawing.Point(7, 108);
-            this.radCarre.Name = "radCarre";
-            this.radCarre.Size = new System.Drawing.Size(57, 21);
-            this.radCarre.TabIndex = 3;
-            this.radCarre.TabStop = true;
-            this.radCarre.Text = "Carré";
-            this.radCarre.UseVisualStyleBackColor = true;
+            this.radHexaInverse.AutoSize = true;
+            this.radHexaInverse.Location = new System.Drawing.Point(7, 52);
+            this.radHexaInverse.Name = "radHexaInverse";
+            this.radHexaInverse.Size = new System.Drawing.Size(133, 21);
+            this.radHexaInverse.TabIndex = 1;
+            this.radHexaInverse.TabStop = true;
+            this.radHexaInverse.Text = "Hexagonal inversé";
+            this.radHexaInverse.UseVisualStyleBackColor = true;
+            // 
+            // radHexa
+            // 
+            this.radHexa.AutoSize = true;
+            this.radHexa.Location = new System.Drawing.Point(7, 24);
+            this.radHexa.Name = "radHexa";
+            this.radHexa.Size = new System.Drawing.Size(87, 21);
+            this.radHexa.TabIndex = 0;
+            this.radHexa.TabStop = true;
+            this.radHexa.Text = "Hexagonal";
+            this.radHexa.UseVisualStyleBackColor = true;
+            // 
+            // txtSommeOuverts
+            // 
+            this.txtSommeOuverts.Enabled = false;
+            this.txtSommeOuverts.Location = new System.Drawing.Point(741, 331);
+            this.txtSommeOuverts.Name = "txtSommeOuverts";
+            this.txtSommeOuverts.Size = new System.Drawing.Size(47, 20);
+            this.txtSommeOuverts.TabIndex = 11;
+            this.txtSommeOuverts.TextChanged += new System.EventHandler(this.txtSommeOuverts_TextChanged);
+            // 
+            // lblSommeOuverts
+            // 
+            this.lblSommeOuverts.AutoSize = true;
+            this.lblSommeOuverts.Font = new System.Drawing.Font("Nobile", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSommeOuverts.Location = new System.Drawing.Point(467, 332);
+            this.lblSommeOuverts.Name = "lblSommeOuverts";
+            this.lblSommeOuverts.Size = new System.Drawing.Size(272, 17);
+            this.lblSommeOuverts.TabIndex = 12;
+            this.lblSommeOuverts.Text = "Nombre de noeuds dans la liste des ouverts :";
+            // 
+            // lblSommeFermes
+            // 
+            this.lblSommeFermes.AutoSize = true;
+            this.lblSommeFermes.Font = new System.Drawing.Font("Nobile", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSommeFermes.Location = new System.Drawing.Point(467, 364);
+            this.lblSommeFermes.Name = "lblSommeFermes";
+            this.lblSommeFermes.Size = new System.Drawing.Size(270, 17);
+            this.lblSommeFermes.TabIndex = 14;
+            this.lblSommeFermes.Text = "Nombre de noeuds dans la liste des fermés :";
+            // 
+            // txtSommeFermes
+            // 
+            this.txtSommeFermes.Enabled = false;
+            this.txtSommeFermes.Location = new System.Drawing.Point(741, 363);
+            this.txtSommeFermes.Name = "txtSommeFermes";
+            this.txtSommeFermes.Size = new System.Drawing.Size(47, 20);
+            this.txtSommeFermes.TabIndex = 13;
+            // 
+            // lblNbNoeuds
+            // 
+            this.lblNbNoeuds.AutoSize = true;
+            this.lblNbNoeuds.Font = new System.Drawing.Font("Nobile", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNbNoeuds.Location = new System.Drawing.Point(467, 299);
+            this.lblNbNoeuds.Name = "lblNbNoeuds";
+            this.lblNbNoeuds.Size = new System.Drawing.Size(240, 17);
+            this.lblNbNoeuds.TabIndex = 16;
+            this.lblNbNoeuds.Text = "Nombre de noeuds du chemin solution :";
+            // 
+            // txtNbNoeuds
+            // 
+            this.txtNbNoeuds.Enabled = false;
+            this.txtNbNoeuds.Location = new System.Drawing.Point(741, 298);
+            this.txtNbNoeuds.Name = "txtNbNoeuds";
+            this.txtNbNoeuds.Size = new System.Drawing.Size(47, 20);
+            this.txtNbNoeuds.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNbNoeuds);
+            this.Controls.Add(this.txtNbNoeuds);
+            this.Controls.Add(this.lblSommeFermes);
+            this.Controls.Add(this.txtSommeFermes);
+            this.Controls.Add(this.lblSommeOuverts);
+            this.Controls.Add(this.txtSommeOuverts);
             this.Controls.Add(this.grbTypePavage);
             this.Controls.Add(this.lblPavage);
             this.Controls.Add(this.numPavage);
@@ -261,6 +328,12 @@
         private System.Windows.Forms.RadioButton radTriangle;
         private System.Windows.Forms.RadioButton radHexaInverse;
         private System.Windows.Forms.RadioButton radHexa;
+        private System.Windows.Forms.Label lblSommeOuverts;
+        private System.Windows.Forms.Label lblSommeFermes;
+        private System.Windows.Forms.Label lblNbNoeuds;
+        public System.Windows.Forms.TextBox txtSommeOuverts;
+        public System.Windows.Forms.TextBox txtSommeFermes;
+        public System.Windows.Forms.TextBox txtNbNoeuds;
     }
 }
 

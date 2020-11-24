@@ -17,6 +17,7 @@ namespace IA_Navigation
             InitializeComponent();
             radHexa.Checked = true;
         }
+                
 
         private void btn_ClickA(object sender, EventArgs e)
         {
@@ -61,7 +62,9 @@ namespace IA_Navigation
                 }                
                 g.GetSearchTree(trvBranche);
             }
-
+            txtNbNoeuds.Text = Lres.Count.ToString();
+            txtSommeFermes.Text = g.L_Fermes.Count.ToString();
+            txtSommeOuverts.Text = g.L_Ouverts.Count.ToString();
             txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal))*60) + "min";
 
         }
@@ -163,6 +166,11 @@ namespace IA_Navigation
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSommeOuverts_TextChanged(object sender, EventArgs e)
         {
 
         }

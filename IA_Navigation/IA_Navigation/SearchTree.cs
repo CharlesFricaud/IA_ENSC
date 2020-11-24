@@ -93,6 +93,7 @@ namespace IA_Navigation
                     _LN.Insert(0, N);  // On insère en position 1
                 }
             }
+
             return _LN;
         }
 
