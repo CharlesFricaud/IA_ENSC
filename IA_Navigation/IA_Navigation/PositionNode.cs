@@ -31,8 +31,12 @@ namespace IA_Navigation
         public override bool IsEqual(GenericNode N)
         {
             PositionNode Node = (PositionNode)N;
-            return (Math.Round(x) == Math.Round(Node.x) && Math.Round(y) == Math.Round(Node.y));
 
+            //Vu que le pavage carré ne manipule pas de racines on met une condition d'égalité plus stricte
+            if(typePavage == "carre")
+                return (Math.Round(x) == Math.Round(Node.x) && Math.Round(y) == Math.Round(Node.y));
+            else                
+                return ((x >= Node.x - pavage && x <= Node.x + pavage) && (y > Node.y - pavage && y <= Node.y + pavage));
         }
 
         public override double GetArcCost(GenericNode N)
@@ -43,6 +47,9 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
+            if (typePavage == "hexa" || typePavage == "hexaInverse")
+                return ((x >= xf - pavage && x <= xf + pavage) && (y > yf - pavage && y <= yf + pavage));
+
             return ((x >= xf - pavage / 2.0 && x <= xf + pavage / 2.0) && (y > yf - pavage / 2.0 && y <= yf + pavage / 2.0));
         }
 
