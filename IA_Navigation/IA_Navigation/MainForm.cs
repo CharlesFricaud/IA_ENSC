@@ -26,6 +26,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
             string type = "";
 
+            //Choix type pavage
             if (radCarre.Checked)
                 type = "carre";
             else if (radHexa.Checked)
@@ -48,23 +49,28 @@ namespace IA_Navigation
             else
             {
                 lblSolution.Text = "Un chemin a été trouvée";
-                //Dessin du chemin sur la carte
-                Dessin.TracePoint(N0.x, N0.y, picBackground);                
+                
+                Dessin.TracePoint(N0.x, N0.y, picBackground); //Point initial             
                 for (int i = 0; i < Lres.Count; i++)
                 {
                     if (i != Lres.Count - 1)
                     {
+                        //Dessin du chemin sur la carte
                         tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
                     }
                     else
-                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
+                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground); //Point final
                 }                
                 g.GetSearchTree(trvBranche);
             }
+
+            //Affichage des différents nombre de noeuds
             txtNbNoeuds.Text = Lres.Count.ToString();
             txtSommeFermes.Text = g.L_Fermes.Count.ToString();
             txtSommeOuverts.Text = g.L_Ouverts.Count.ToString();
+
+            //Affichage du temps
             txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal))*60) + "min";
 
         }
@@ -76,6 +82,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
             string type = "";
 
+            //Choix type pavage
             if (radCarre.Checked)
                 type = "carre";
             else if (radHexa.Checked)
@@ -98,23 +105,28 @@ namespace IA_Navigation
             else
             {
                 lblSolution.Text = "Un chemin a été trouvée";
-                //Dessin du chemin sur la carte
-                Dessin.TracePoint(N0.x, N0.y, picBackground);
+                
+                Dessin.TracePoint(N0.x, N0.y, picBackground); //Point initial
                 for (int i = 0; i < Lres.Count; i++)
                 {
                     if (i != Lres.Count - 1)
                     {
+                        //Dessin du chemin sur la carte
                         tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
                     }
                     else
-                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
+                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground); //Point final
                 }
                 g.GetSearchTree(trvBranche);
             }
+
+            //Affichage des différents nombre de noeuds
             txtNbNoeuds.Text = Lres.Count.ToString();
             txtSommeFermes.Text = g.L_Fermes.Count.ToString();
             txtSommeOuverts.Text = g.L_Ouverts.Count.ToString();
+
+            //Affichage du temps
             txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
@@ -126,6 +138,7 @@ namespace IA_Navigation
             SearchTree g = new SearchTree();
             string type = "";
 
+            //Choix type pavage
             if (radCarre.Checked)
                 type = "carre";
             else if (radHexa.Checked)
@@ -148,35 +161,31 @@ namespace IA_Navigation
             else
             {
                 lblSolution.Text = "Un chemin a été trouvée";
-                //Dessin du chemin sur la carte
-                Dessin.TracePoint(N0.x, N0.y, picBackground);
+                
+                Dessin.TracePoint(N0.x, N0.y, picBackground); //Point initial
                 for (int i = 0; i < Lres.Count; i++)
                 {
                     if (i != Lres.Count - 1)
                     {
+                        //Dessin du chemin sur la carte
                         tempsTotal += PositionNode.time_estimation(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y);
                         Dessin.TraceSegment(Lres[i].x, Lres[i].y, Lres[i + 1].x, Lres[i + 1].y, picBackground);
                     }
                     else
-                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground);
+                        Dessin.TracePoint(Lres[i].x, Lres[i].y, picBackground); //Point final
                 }
                 g.GetSearchTree(trvBranche);
             }
+
+            //Affichage des différents nombre de noeuds
             txtNbNoeuds.Text = Lres.Count.ToString();
             txtSommeFermes.Text = g.L_Fermes.Count.ToString();
             txtSommeOuverts.Text = g.L_Ouverts.Count.ToString();
+
+            //Affichage du temps
             txtTemps.Text = "Temps total :" + " " + Math.Truncate(tempsTotal) + "h " + Math.Round((tempsTotal - Math.Truncate(tempsTotal)) * 60) + "min";
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSommeOuverts_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -32,7 +32,7 @@ namespace IA_Navigation
         {
             PositionNode Node = (PositionNode)N;
 
-            //Vu que le pavage carré ne manipule pas de racines on met une condition d'égalité plus stricte
+            //On met une condition d'égalité plus stricte pour les pavages triangle et carré
             if(typePavage == "carre" || typePavage == "triangle")
                 return (Math.Round(x) == Math.Round(Node.x) && Math.Round(y) == Math.Round(Node.y));
             else                
@@ -47,6 +47,7 @@ namespace IA_Navigation
 
         public override bool EndState()
         {
+            //Les pavages hexagonaux sont plus grand donc on met une condition de fin plus large
             if (typePavage == "hexa" || typePavage == "hexaInverse")
                 return ((x >= xf - pavage && x <= xf + pavage) && (y > yf - pavage && y <= yf + pavage));
 
@@ -166,8 +167,7 @@ namespace IA_Navigation
         public override double CalculeHCost()
         {
             //Vitesse maximale atteinte pour 45° et vaut 0.9*Vvent
-            return (Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;
-            //return 0;
+            return (Math.Sqrt((x - xf) * (x - xf) + (y - yf) * (y - yf)))/(0.9*50) ;            
 
         }
 

@@ -230,7 +230,6 @@
             this.txtSommeOuverts.Name = "txtSommeOuverts";
             this.txtSommeOuverts.Size = new System.Drawing.Size(47, 20);
             this.txtSommeOuverts.TabIndex = 11;
-            this.txtSommeOuverts.TextChanged += new System.EventHandler(this.txtSommeOuverts_TextChanged);
             // 
             // lblSommeOuverts
             // 
