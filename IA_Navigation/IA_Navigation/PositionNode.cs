@@ -33,7 +33,7 @@ namespace IA_Navigation
             PositionNode Node = (PositionNode)N;
 
             //Vu que le pavage carré ne manipule pas de racines on met une condition d'égalité plus stricte
-            if(typePavage == "carre")
+            if(typePavage == "carre" || typePavage == "triangle")
                 return (Math.Round(x) == Math.Round(Node.x) && Math.Round(y) == Math.Round(Node.y));
             else                
                 return ((x >= Node.x - pavage && x <= Node.x + pavage) && (y > Node.y - pavage && y <= Node.y + pavage));
